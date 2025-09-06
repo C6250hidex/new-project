@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
   },
@@ -107,8 +108,10 @@
     "yaml": "^2.8.1"
   },
   "scripts": {
-    "tailwind":" npx tailwindcss -i ./src/styles.css -o ./build/css/style.css --watch",
-    "prettier":"npx prettier --write '**/*.html "
+    "tailwind": " npx tailwindcss -i ./src/styles.css -o ./build/css/style.css --watch",
+    "prettier": "npx prettier --write '**/*.html ",
+    "predelopy":"nmp run build",
+    "delopy":"gh-pages -d build"
   },
   "keywords": [],
   "author": "chidex",
