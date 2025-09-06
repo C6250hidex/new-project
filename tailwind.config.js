@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [ "./build/*.html"],
+  content: [ "./build/*.html", "./build/js/*.js"],
   theme: {
-    extend: {},
-    animation:{
+    extend: {
+       screens: {
+        'widescreen': { 'raw': '(min-aspect-ratio: 3/2)' },
+        'tallscreen': { 'raw': '(max-aspect-ratio: 13/20)' },
+      },
+      animation:{
             'fad-in': 'fadeIn 0.5s ease-in-out'
         },
         keyframes:{
@@ -12,6 +16,7 @@ module.exports = {
                 '100%':{opacity:1}
             },
         }
+    },
   },
   plugins: [],
 };
