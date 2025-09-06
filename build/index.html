@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nnamani Emmanuel</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-zinc-900 text-zinc-100">
+    <header class="sticky top-0 z-10  bg-zinc-900 text-zinc-100">
+        <div class="mx-auto max-w-6xl p-5">
+            <nav class="flex items-center justify-between uppercase">
+                <h1 class="text-2xl font-extrabold transition-colors duration-300 hover:text-slate-500">
+                    NNAMANI <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">EMMANUEL</span>
+                </h1>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden flex-col items-center flex-wrap gap-8 text-lg font-black md:flex md:flex-row">
+                    <li>
+                        <a href="#about" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">about</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">service</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">project</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">contact us</a>
+                    </li>
+                    <li>
+                        <a href="mailto:chiderannamani442@gmail.com" class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">hire me</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <!-- <button id="hamburger-button" class="md:hidden focus:outline-none">
+                    
+                </button> -->
+                <button id="hamburger-button" class="relative h-8 w-8 cursor-pointer text-3xl md:hidden">
+          <!-- &#9776; -->
+                    <div class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']">
+                    </div>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="absolute top-full left-0 w-full max-h-96 bg-zinc-900 p-5 md:hidden">
+            <ul class="flex flex-col gap-4 text-center font-black uppercase">
+                <li>
+                    <a href="#about" class="block py-2 text-zinc-100 transition-colors duration-300 hover:text-slate-500">about</a>
+                </li>
+                <li>
+                    <a href="#services" class="block py-2 text-zinc-100 transition-colors duration-300 hover:text-slate-500">service</a>
+                </li>
+                <li>
+                    <a href="#projects" class="block py-2 text-zinc-100 transition-colors duration-300 hover:text-slate-500">project</a>
+                </li>
+                <li>
+                    <a href="#contact" class="block py-2 text-zinc-100 transition-colors duration-300 hover:text-slate-500">contact us</a>
+                </li>
+                <li>
+                    <a href="mailto:chiderannamani442@gmail.com" class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">hire me</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl p-5">
+        <!-- Hero Section -->
+        <section class="section rounded-2xl mb-8 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-1">
+                <div class="order-2 md:order-1">
+                    <h1 id="animated-text" class="text-xl sm:text-5xl md:text-3xl font-extrabold text-white leading-tight tracking-wide">
+                         <span class="typewriter-text"></span>
+                        <span class="typewriter-cursor"></span>
+                    </h1>
+                    <!-- <p class="uppercase text-2xl sm:text-3xl lg:text-4xl font-extrabold my-4">
+                        frontend <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">developer</span>
+                    </p> -->
+                    <p class="text-gray-300 max-w-lg mb-6">I build user-friendly and visually appealing websites and applications. I specialize in creating responsive, interactive interfaces using HTML, CSS, and JavaScript.</p>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://github.com/C6250hidex" target="_blank" aria-label="GitHub" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.74.08-.725.08-.725 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.125-.3-.54-1.52.12-3.18 0 0 1-.322 3.3.08.95-.262 1.95-.392 2.947-.392 1 0 1.997.13 2.947.392 2.29-2.43 3.29-1.93 3.29-1.93.66 1.66.24 2.88.12 3.18.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.895-.015 3.28 0 .32.21.69.82.57C20.565 22.092 24 17.59 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://x.com/ChideraNna37519" target="_blank" aria-label="Twitter" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 2.5a.77.77 0 00-.63-.25c-.21.01-.4.14-.54.38L19 5.86l-2.8-2.69a.77.77 0 00-.7-.14l-2.4.45L11.8 1.3a.77.77 0 00-.7-.15l-1.3.4L8.4 0H5.8a.77.77 0 00-.7-.15L3.8 2.5l-1.4.45a.77.77 0 00-.7-.15l-1.3-.4L.5 1.3c-.22.1-.41.25-.54.43a.77.77 0 00-.17.65V23.7a.77.77 0 00.7.15l1.3-.4L3.8 24h2.6a.77.77 0 00.7-.15l1.3-.4 1.4.45a.77.77 0 00.7-.15l2.4.45L14 22.86l2.8 2.69a.77.77 0 00.7.14l2.4-.45 1.3.4V.3a.77.77 0 00-.7-.15l-1.3-.4L22.46 2.5zM12 21.7c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366" target="_blank" aria-label="linkedin" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.48c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.58h-3.554V9.29h3.418v1.561h.048c.478-.896 1.637-1.853 3.37-1.853 3.618 0 4.287 2.378 4.287 5.48v6.088zM4.306 6.581c-1.144 0-2.068-.926-2.068-2.072 0-1.146.924-2.071 2.068-2.071s2.068.925 2.068 2.071c-.001 1.146-.925 2.072-2.068 2.072zM5.358 20.452H1.804V9.29h3.554v11.162zM22.225 0H1.771C.794 0 0 .774 0 1.728v20.544C0 23.226.794 24 1.771 24h20.454c.976 0 1.771-.774 1.771-1.728V1.728C24 .774 23.205 0 22.225 0z"/></svg>
+                        </a>
+                    </div>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://drive.google.com/file/d/1t9W4KzCBn9ZRoK-DLNSBuTR6hHqfXs6U/view?usp=drivesdk" download target="_blank"  class="inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
+                            Download CV
+                        </a>
+                        <a href="#projects"  class=" inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center items-center">
+                    <div class="w-full max-w-xs md:max-w-md rounded-full bg-zinc-100 p-1 shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:rotate-2 hover:shadow-2xl">
+                        <img src="./img/IMG_0343.jpg" alt="Profile Photo" class="rounded-full w-full h-auto" />
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-semibold uppercase">
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">HTML</span>
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">CSS</span>
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">Bootstrap</span>
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">TailWind</span>
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">JavaScript</span>
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">React</span>
+                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">GitHub</span>
+            </div>
+        </section>
+       
+        <section id="about" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20" >
+            <h2 class="uppercase text-center text-4xl font-bold text-slate-500 mb-10">about me</h2>
+            <div class=" rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <p >i am frontend web developer.
+                    I build user-friendly and visually appealing websites and applications. I specialize in creating responsive, interactive interfaces using HTML, CSS, and JavaScript. My work involves designing and developing layouts, implementing UI/UX designs, and ensuring cross-browser compatibility. I also work with front-end frameworks like React and Angular to deliver high-quality digital products. My focus is on delivering seamless user experiences, optimizing performance, and ensuring accessibility. I collaborate with designers and back-end developers to bring projects to life, staying up-to-date with industry trends to continuously improve my skills.
+                </p>
+                <div class="uppercase">
+                    <h2 class="text-2xl font-bold text-slate-100 mb-10">skill</h2>
+                   <aside class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p>html</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 90%; text-align: center;">90%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>css</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 70%; text-align: center;">70%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Bootstrap</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 50%; text-align: center;">50%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>TailWind</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 60%; text-align: center;">60%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>javascript</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 60%; text-align: center;">60%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>React</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 40%; text-align: center;">40%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Git and Github</p>
+                            <div class="w-full bg-slate-500 rounded-full flex items-center">
+                                <span class="bg-white rounded-full text-zinc-900" style="width: 50%; text-align: center;">50%</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section id="services" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="p-6 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-slate-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg"class="h-12 w-12 "  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M80-680v-80q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v80h-80v-80H160v80H80Zm240 560v-80H160q-33 0-56.5-23.5T80-280v-80h80v80h640v-80h80v80q0 33-23.5 56.5T800-200H640v80H320Zm160-400Zm-288 0 104-104-56-56L80-520l160 160 56-56-104-104Zm576 0L664-416l56 56 160-160-160-160-56 56 104 104Z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-zinc-100">Web Design</h3>
+                    <p class="mt-2 text-gray-400">I create stunning and intuitive websites that are a joy to use on any device.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-slate-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20.25l-6-6M4 14.25l6-6M10 4.5l-6 6M4 14.25h16a2 2 0 002-2V7.5a2 2 0 00-2-2H4a2 2 0 00-2 2v4.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-zinc-100">Branding</h3>
+                    <p class="mt-2 text-gray-400">I craft unique brand identities that tell your story and resonate with your audience.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-slate-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.75l6-6M18 12.75l-6-6M12 18.75V5.25M12 18.75a6 6 0 100-12 6 6 0 000 12z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-zinc-100">UI/UX</h3>
+                    <p class="mt-2 text-gray-400">I design seamless user interfaces and experiences that are both beautiful and effective.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-slate-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12"  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M120-120v-520h200v-200h520v720H120Zm520-80h120v-560H400v120h240v440Zm-240 0h160v-360H400v360Zm-200 0h120v-360H200v360Zm440-440v80-80Zm-320 80Zm240 0Zm80-80Z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-zinc-100">Responsive Design</h3>
+                    <p class="mt-2 text-gray-400">My mobile-first approach ensures your site works perfectly on all devices and screen sizes.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-slate-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 "  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v44h-80v-360H280v720h200v80H280Zm515 0-88-88q-11 5-23 6.5t-24 1.5q-59 0-99.5-40.5T520-259q0-18 4.5-35t12.5-32l95 95 56-57-95-94q15-8 32-12.5t35-4.5q58 0 99 40.5t41 99.5q0 12-2 24t-7 23l89 88-85 84ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720ZM280-120v-720 720Z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-zinc-100">Maintenance & Support</h3>
+                    <p class="mt-2 text-gray-400">After launch, I offer support and updates to keep your site secure and running smoothly.</p>
+                </div>
+            </div>
+            <div class="p-6 rounded-3xl shadow-2xl border border-zinc-500 transform hover:scale-10 transition-transform duration-300l text-center mt-10">
+                    <h3 class="text-3xl font-extrabold text-zinc-100">Ready to Start Your Project?</h3>
+                    <p class="text-xl font-medium text-slate-500 my-5">Let’s discuss how I can help bring your web development vision to life</p>
+                    <a class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100" href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="linkedin">Get Started Today
+                    </a>
+            </div>
+        </section>
+        <!-- Placeholder for other sections (Projects, Contact, etc.) -->
+        <section id="projects" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Projects</h2>
+            <p class="text-xl  text-slate-100 mb-10 text-center">Explore my latest work showcasing innovative solutions and creative implementations</p>
+            <div class="bg-zinc-900 text-zinc-100 rounded-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- project 1 -->
+                <div class="rounded-xl relative overflow-hidden w-full h-56 sm:h-64 md:h-72 lg:h-96 group">
+                    <img class="h-full w-full object-fill rounded-xl " src="./img/cook1.jpg" alt="" >
+                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-white p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 sm:h-36 md:h-48 lg:h-56">
+                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">cooking website</h3>
+                        <p class="text-pretty mb-2">This website build with pure HTML and CSS provides recipes, cooking techniques, and meal planning resources. It features appetizing imagery, easy navigation, and responsive design, catering to home cooks and food enthusiasts, offering a platform for culinary exploration and inspiration.</p>
+                        <a href="https://cooking-website-pi.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    </div>
+                </div>
+                <!-- project 2 -->
+                <div class="rounded-xl relative overflow-hidden w-full h-56 sm:h-64 md:h-72 lg:h-96 group">
+                    <img class="h-full w-full object-fill rounded-xl " src="./img/kil1.jpg" alt="" >
+                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-white p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 sm:h-36 md:h-48 lg:h-56">
+                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Kilimanjaro restaurant website</h3>
+                        <p class="text-pretty mb-2">This website showcases the restaurant's menu, ambiance, and services. It provides online reservations, contact information, and location details, offering a glimpse into the culinary experience and inviting customers to dine in order online.</p>
+                        <a href="https://cooking-website-pi.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    </div>
+                </div>
+                <!-- project 3 -->
+                <div class="rounded-xl relative overflow-hidden w-full h-56 sm:h-64 md:h-72 lg:h-96 group">
+                    <img class="h-full w-full object-fill rounded-xl " src="./img/flu1.jpg" alt="" >
+                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-white p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 sm:h-36 md:h-48 lg:h-56">
+                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">flutterwave</h3>
+                        <p class="text-pretty mb-2">Flutterwave is a payment technology company. it showcases payment solutions for businesses, including payment processing, online payments, and cross-border transactions, enabling seamless payments in Africa and beyond. It provides tools and resources for businesses togrow and thrive.</p>
+                        <a href="https://flutterwave-six.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    </div>
+                </div>
+                <!-- project 4 -->
+                <div class="rounded-xl relative overflow-hidden w-full h-56 sm:h-64 md:h-72 lg:h-96 group">
+                    <img class="h-full w-full object-fill rounded-xl " src="./img/mov1.jpg" alt="" >
+                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-white p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 sm:h-36 md:h-48 lg:h-56">
+                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">moviebox</h3>
+                        <p class="text-pretty mb-2">Movie box website is an online platform that allows users to stream or download movies and tv shows. It typically features a vast library of content, including new releases, classics, and original content, often organized by genre, popularity, or alphabetical order.</p>
+                        <a href="https://c6250hidex.github.io/movie-box/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    </div>
+                </div>
+                <!-- project 5 -->
+                <div class="rounded-xl relative overflow-hidden w-full h-56 sm:h-64 md:h-72 lg:h-96 group">
+                    <img class="h-full w-full object-fill rounded-xl " src="./img/Home Interior Designs - Google Chrome 27_06_2025 14_12_19.png" alt="" >
+                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-white p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 sm:h-36 md:h-48 lg:h-56">
+                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Chidex Interior</h3>
+                        <p class="text-pretty mb-2">At Chidex Interiors, we believe that your home should be a reflection of your personality and a sanctuary for your
+                        well-being. Our vision is to empower individuals to create beautiful, functional, and inspiring living spaces.</p>
+                        <a href="https://chidex-interior.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    </div>
+                </div>
+                <!-- project 6 -->
+                <div class="rounded-xl relative overflow-hidden w-full h-56 sm:h-64 md:h-72 lg:h-96 group">
+                    <img class="h-full w-full object-fill rounded-xl " src="./img/loop1.jpg" alt="" >
+                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-white p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 sm:h-36 md:h-48 lg:h-56">
+                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">loopstudios</h3>
+                        <p class="text-pretty mb-2">loopstudios landing page showcases creative work, featuring interactive experiences, AR/VR, and innovative design. It highlights the studio's expertise, services, and portfolio, inviting visitors to explore their immersive world and collaborate on innovative projects</p>
+                        <a href="https://loopstudios-landing-page-main-orpin.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    </div>
+                </div>
+                <!-- project ends here -->
+            </div>
+            <div class="p-6 rounded-3xl shadow-2xl border border-zinc-500 transform hover:scale-10 transition-transform duration-300l text-center my-5">
+                    <h3 class="text-3xl font-extrabold text-zinc-100">Want to See More?</h3>
+                    <p class="text-xl font-medium text-slate-500 my-5">Check out my complete portfolio on GitHub for more exciting projects and contributions</p>
+                    <a class="inline-flex items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100" href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="linkedin">
+                        <svg role="img" viewBox="0 0 24 24" fill="currentColor" width="40px">
+                        <path
+                            d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.71.08-.71 1.17.08 1.8 1.2 1.8 1.2 1.04 1.8 2.72 1.28 3.38.98.1-.78.4-1.28.72-1.58-2.55-.29-5.24-1.27-5.24-5.65 0-1.24.44-2.26 1.16-3.06-.12-.29-.5-1.47.1-3.06 0 0 .95-.3 3.12 1.16a10.8 10.8 0 012.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.12-1.16 3.12-1.16.6 1.59.22 2.77.1 3.06.72.8 1.16 1.82 1.16 3.06 0 4.39-2.7 5.35-5.27 5.63.42.36.8 1.1.8 2.22v3.29c0 .31.21.66.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
+                    </svg>View All Projects</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Contact Us</h2>
+            <div class="bg-zinc-900 text-zinc-100 rounded-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-gray-300 mb-2">If you'd like to work together or have any questions, feel free to reach out!</p>
+                    <p class="text-gray-300 mb-6">We're here to answer your questions, provide support, or discuss potential collaborations. Fill out the form or reach out directly via email or phone. We look forward to hearing from you and exploring how we can work together to bring your ideas to life. Let's start a conversation and see how we can work together to achieve your goals.</p>
+                    <div class="mt-4 flex items-center gap-4 flex-wrap">
+                        <a href="mailto:chiderannamani442@gmail.com" class="inline-flex items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100 ">
+                            <img src="./img/email.gif" alt="email" class="inline-block w-10 h-10">
+                            <span>Email Me</span>
+                        </a>
+                        <a href="tel:+2347089596250" class="inline-flex items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100 ">
+                            <img src="./img/phone.gif" alt="phone" class="inline-block w-10 h-10">
+                            <span>07089596250</span>
+                        </a>
+                    </div>
+                </div>
+                 <form action="https://formsubmit.co/chiderannamani442@gmail.com" method="POST" class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 ">
+                    <input type="text" name="name" id="name" placeholder="your name" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
+                    <input type="email" id="email" name="email" placeholder="chidex222@gmail.com" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
+                    <input type="tel" name="phone" id="phone" placeholder="+234-7087654355" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
+                    <textarea name="" cols="30" id="message" rows="10" placeholder="Message" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100"></textarea>
+                    <button type="submit" class="uppercase text-xl inline-flex justify-center items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">send a Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-zinc-900 text-zinc-100 py-8">
+        <div class="mx-auto max-w-6xl p-5 text-center">
+            <p>&copy; 2024 Nnamani Emmanuel. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>

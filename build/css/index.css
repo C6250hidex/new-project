@@ -1,0 +1,13 @@
+body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-zinc-100 text-zinc-900;
+}
+/* Custom styles for the mobile menu */
+#h {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+}
+#mobile-menu.open {
+    transform: translateY(0);
+}
+
