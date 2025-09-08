@@ -8,13 +8,22 @@ module.exports = {
         'tallscreen': { 'raw': '(max-aspect-ratio: 13/20)' },
       },
       animation:{
-            'fad-in': 'fadeIn 0.5s ease-in-out'
+            'fad-in': 'fadeIn 0.5s ease-in-out',
+             blink: 'blink 1s step-end infinite',
         },
         keyframes:{
             fadeIn:{
                 '0%':{opacity:0},
                 '100%':{opacity:1}
             },
+            blink: {
+              'from, to': {
+                'background-color': 'transparent',
+              },
+              '50%': {
+                'background-color': 'rgb(55, 65, 81)', // Tailwind's gray-700
+              },
+            }
         }
     },
   },

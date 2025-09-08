@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
        }, {
-        rootMargin: '0px 0px -100px 0px', // Trigger when element is 100px from the bottom of the viewport
+        rootMargin: '0px 0px -100px 0px', 
         threshold: [0, 0.5, 1.0]
     });
     sections.forEach(section => {
@@ -58,19 +58,40 @@ document.addEventListener('DOMContentLoaded', () => {
     typeWriter();
 });
 
-// // for email sending
-// function sendEmail(){
-    
-//         Email.send({
-//          SecureToken : "3a3e27ec-3f3a-41da-a6d2-b52033232dcc",
-//         To : 'chidex6250@gmail.com',
-//         From : document.getElementById('email').value,
-//         Subject : "My portfolio website contact form",
-//         Body : "Name:"+ document.getElementById("name").value
-//         + "<br> Email:"+ document.getElementById("email").value
-//         + "<br> Phone number:"+ document.getElementById("phone").value
-//         + "<br> Message:"+ document.getElementById("message").value
-//     }).then(
-//     message => alert("Message send successfully")
-//     );
-// }
+// for welcome message
+document.addEventListener('DOMContentLoaded', () => {
+  const welcomeContainer = document.getElementById('welcome-message-container');
+  const typedTextElement = document.getElementById('typed-text');
+  const cursor = document.getElementById('cursor');
+  const mainContent = document.getElementById('main-content');
+
+  const message = "Welcome to my page! I'm Nnamani Chidera Emmanuel.";
+  const typingSpeed = 75;
+  welcomeContainer.classList.remove('opacity-0');
+
+  let i = 0;
+  const typeWriter = () => {
+    if (i < message.length) {
+      typedTextElement.textContent += message.charAt(i);
+      i++;
+      setTimeout(typeWriter, typingSpeed);
+    } else {
+      cursor.classList.remove('animate-blink');
+      setTimeout(() => {
+        cursor.style.display = 'none';
+
+        // Automatically close the pop-up after a short delay
+        setTimeout(() => {
+          welcomeContainer.classList.add('opacity-0');
+          setTimeout(() => {
+            welcomeContainer.style.display = 'none';
+            // Reveal the main content
+            mainContent.classList.remove('hidden', 'opacity-0');
+          }, 700);
+        }, 1500); // Wait 1.5 seconds after typing finishes
+      }, 500);
+    }
+  };
+
+  setTimeout(typeWriter, 1500);
+});
