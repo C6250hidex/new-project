@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.getElementById('cursor');
   const mainContent = document.getElementById('main-content');
 
-  const message = "Welcome to my page! I'm Nnamani Chidera Emmanuel.";
+  const message = `Hello, i'm Emmanuel. welcome to my porfolio`;
   const typingSpeed = 75;
   welcomeContainer.classList.remove('opacity-0');
 
@@ -95,34 +95,6 @@ function startHeaderTypewriter() {
 
   typeWriter();
 }
-// for button pricing
-document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('button');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Get the parent card of the clicked button
-                    const card = button.closest('div');
-                    // Get the plan name from the h2 tag within the card
-                    const planName = card.querySelector('h2').textContent;
-
-                    // IMPORTANT: Replace 'youremail@example.com' with your actual email address.
-                    const yourEmail = 'chiderannamani442@gmail.com';
-                    
-                    let subject, body;
-                    
-                    if (planName === 'Enterprise') {
-                        subject = 'Inquiry for a Custom Enterprise Quote';
-                        body = `Hello,\n\nI would like to request a custom quote for the Enterprise plan. Please contact me to discuss my specific business needs.\n\nThank you.`;
-                    } else {
-                        subject = `Inquiry about the ${planName} Plan`;
-                        body = `Hello,\n\nI am interested in the ${planName} plan. Could you please provide more information or a project consultation?\n\nThank you.`;
-                    }
-
-                    window.location.href = `mailto:${yourEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                });
-            });
-        });
 // fillter 
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');

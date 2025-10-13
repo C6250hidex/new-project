@@ -9,788 +9,548 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="./js/script.js" defer></script>
 </head>
-<body class="min-h-screen bg-zinc-900 text-zinc-100">
-    <div id="welcome-message-container" class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900 opacity-0 transition-opacity duration-700">
-        <div class=" text-center p-8 rounded-lg shadow-2xl max-w-6xl mx-4">
+<body class="bg-zinc-900 text-zinc-100">
+    <!-- Welcome Message -->
+    <div id="welcome-message-container" class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900 opacity-0 transition-opacity duration-700 pointer-events-none">
+        <div class="text-center p-8 rounded-lg max-w-6xl mx-4">
             <p id="typed-text" class="text-4xl text-zinc-100 font-mono h-12"></p>
             <span id="cursor" class="bg-slate-500 w-1 h-4 inline-block align-bottom animate-blink"></span>
         </div>
     </div>
+
     <div id="main-content" class="hidden opacity-0 transition-opacity duration-1000">
-          <!-- Shoe Ad Banner (Top of Website) -->
-        <div id="shoe-ad-banner" class="bg-yellow-400 text-black text-center p-3 text-sm md:text-base font-semibold shadow-md flex items-center justify-between">
+        <!-- Shoe Ad Banner -->
+        <div id="shoe-ad-banner" class="bg-yellow-400 text-black text-center p-3 text-sm md:text-base font-semibold shadow-md flex items-center justify-between fixed top-0 left-0 right-0 md:left-64 lg:left-72 z-20">
             <span>👟 Big Sale! Get Stylish Shoes at <strong>Chidera Shoes</strong>. Limited Offer!</span>
-            <a href="#shop-now" class="ml-4 bg-black text-yellow-400 px-3 py-1 rounded-md text-xs md:text-sm hover:bg-gray-800 transition">
-            Shop Now
-            </a>
+            <a href="#shop-now" class="ml-4 bg-black text-yellow-400 px-3 py-1 rounded-md text-xs md:text-sm hover:bg-gray-800 transition">Shop Now</a>
             <button id="close-ad" class="ml-4 text-black hover:text-red-600 font-bold">✖</button>
         </div>
-        <header class="sticky top-0 z-10  bg-zinc-900 text-zinc-100">
-        <div class="mx-auto max-w-6xl p-5">
-            <nav class="flex items-center justify-between uppercase">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-extrabold transition-colors duration-300 hover:text-slate-500"><a href="#">NNAMANI <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">EMMANUEL</span></a>
-                        </h1>
+
+        <div class="flex">
+            <!-- Left Sidebar Navigation -->
+            <aside class="hidden md:flex md:flex-col md:w-64 lg:w-72 bg-zinc-800 min-h-screen fixed top-0 left-0 border-r border-zinc-700 overflow-y-auto">
+                <div class="p-6">
+                    <!-- Profile Picture -->
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-32 h-32 rounded-full bg-zinc-100 p-1 shadow-lg overflow-hidden">
+                            <img src="./img/chidex.png" alt="Nnamani Emmanuel" class="rounded-full w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    
+                    <!-- Logo -->
+                    <h1 class="text-lg font-extrabold mb-2 text-center transition-colors duration-300 hover:text-slate-500">
+                        <a href="#">NNAMANI <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">EMMANUEL</span></a>
+                    </h1>
+                    <p class="text-sm text-gray-400 text-center mb-6">Frontend Developer</p>
+                    
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-col space-y-4 text-base font-semibold uppercase">
+                        <a href="#about" class="duration-300 hover:text-slate-500 py-2 hover:translate-x-1 transform transition-transform">About</a>
+                        <a href="#skills" class="duration-300 hover:text-slate-500 py-2 hover:translate-x-1 transform transition-transform">Skills</a>
+                        <a href="#services" class="duration-300 hover:text-slate-500 py-2 hover:translate-x-1 transform transition-transform">Services</a>
+                        <a href="#projects" class="duration-300 hover:text-slate-500 py-2 hover:translate-x-1 transform transition-transform">Projects</a>
+                        <a href="#contact" class="duration-300 hover:text-slate-500 py-2 hover:translate-x-1 transform transition-transform">Contact</a>
+                        <a href="mailto:chiderannamani442@gmail.com" class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-center text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100 mt-4">Hire Me</a>
+                    </nav>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://github.com/C6250hidex" target="_blank" aria-label="GitHub" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577v-2.002c-3.336.726-4.043-1.61-4.043-1.61-.546-1.385-1.332-1.754-1.332-1.754-1.087-.743.082-.727.082-.727 1.206.086 1.838 1.238 1.838 1.238 1.07 1.838 2.809 1.305 3.49-.997.108-.775.42-.31 1.637-.197-2.73.308-5.602-1.365-5.602-4.823 0-1.066.38-1.933 1.002-2.61-.106-.255-.436-1.235.1-2.573 0 0 .82-.26 2.68 1.238 2.593-.72 5.395-.72 7.988 0 1.86-1.498 2.68-1.238 2.68-1.238.536 1.338.206 2.318.1 2.573.623.677 1.002 1.544 1.002 2.61 0 3.468-2.872 5.127-5.604 5.435.438.378.823 1.102.823 2.223v3.315c0 .32.22.687.822.577C20.562 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://x.com/ChideraNna37519" target="_blank" aria-label="Twitter" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6L18 18"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366" target="_blank" aria-label="linkedin" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.48c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.58h-3.554V9.29h3.418v1.561h.048c.478-.896 1.637-1.853 3.37-1.853 3.618 0 4.287 2.378 4.287 5.48v6.088zM4.306 6.581c-1.144 0-2.068-.926-2.068-2.072 0-1.146.924-2.071 2.068-2.071s2.068.925 2.068 2.071c-.001 1.146-.925 2.072-2.068 2.072zM5.358 20.452H1.804V9.29h3.554v11.162zM22.225 0H1.771C.794 0 0 .774 0 1.728v20.544C0 23.226.794 24 1.771 24h20.454c.976 0 1.771-.774 1.771-1.728V1.728C24 .774 23.205 0 22.225 0z"/></svg>
+                        </a>
+                    </div>
                 </div>
-                <!-- Desktop Navigation -->
-                <div class="hidden flex-col items-center flex-wrap gap-5 text-lg font-black md:flex md:flex-row">
-                    <a href="#about" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">About</a>
-                    <a href="#skills" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">Skills</a>
-                    <a href="#services" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">Services</a>
-                    <a href="#projects" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">Projects</a>
-                    <a href="./index.html#contact" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90"> Contact</a>
-                    <a href="mailto:chiderannamani442@gmail.com" class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">Hire Me</a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn">
+            </aside>
+
+            <!-- Mobile Header -->
+            <header class="md:hidden fixed top-0 left-0 right-0 z-30 bg-zinc-900 border-b border-zinc-700">
+                <div class="p-4 flex items-center justify-between">
+                    <h1 class="text-xl font-extrabold">
+                        <a href="#">NNAMANI <span class="text-slate-500">EMMANUEL</span></a>
+                    </h1>
+                    <button id="mobile-menu-btn" class="text-zinc-100">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
-            </nav>
-        </div>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="md:hidden hidden bg-zinc-900 backdrop-opacity-[1] text-xl ">
-            <div class="px-4 pt-2 pb-3 space-y-1">
-                <a href="#about" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">About</a>
-                <a href="#skills" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Skills</a>
-                <a href="#services" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Services</a>
-                <a href="#projects" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Projects</a>
-                <a href="./index.html#contact" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Contact</a>
-                <a href="mailto:chiderannamani442@gmail.com" class="block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100">Hire Me</a>
-            </div>
-        </div>
-    </header>
-
-    <main class="mx-auto max-w-6xl p-5">
-        <!-- Hero Section -->
-        <section class="section rounded-2xl mb-8 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 ">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-1">
-                <div class="order-2 md:order-1">
-                    <h1 id="animated-text" class="text-2xl sm:text-5xl md:text-3xl font-extrabold text-white leading-tight tracking-wide">
-                        <span class="typewriter-text"></span>
-                        <!-- The cursor element -->
-                        <span class="typewriter-cursor"></span>
-                    </h1>
-                    <!-- <p class="uppercase text-2xl sm:text-3xl lg:text-4xl font-extrabold my-4">
-                        frontend <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">developer</span>
-                    </p> -->
-                    <p class="text-gray-300 max-w-lg mb-6 text-balance">I am a versatile front-end developer with expertise in a wide range of modern web technologies, including HTML, CSS, and JavaScript. I create user-centric digital experiences, leveraging frameworks like React and styling tools like Tailwind CSS and Bootstrap to build responsive and intuitive interfaces.</p>
-                    <div class="flex space-x-4 mb-6">
-                        <a href="https://github.com/C6250hidex" target="_blank" aria-label="GitHub" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577v-2.002c-3.336.726-4.043-1.61-4.043-1.61-.546-1.385-1.332-1.754-1.332-1.754-1.087-.743.082-.727.082-.727 1.206.086 1.838 1.238 1.838 1.238 1.07 1.838 2.809 1.305 3.49-.997.108-.775.42-.31 1.637-.197-2.73.308-5.602-1.365-5.602-4.823 0-1.066.38-1.933 1.002-2.61-.106-.255-.436-1.235.1-2.573 0 0 .82-.26 2.68 1.238 2.593-.72 5.395-.72 7.988 0 1.86-1.498 2.68-1.238 2.68-1.238.536 1.338.206 2.318.1 2.573.623.677 1.002 1.544 1.002 2.61 0 3.468-2.872 5.127-5.604 5.435.438.378.823 1.102.823 2.223v3.315c0 .32.22.687.822.577C20.562 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                        <a href="https://x.com/ChideraNna37519" target="_blank" aria-label="Twitter" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6L18 18"/></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366" target="_blank" aria-label="linkedin" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.48c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.58h-3.554V9.29h3.418v1.561h.048c.478-.896 1.637-1.853 3.37-1.853 3.618 0 4.287 2.378 4.287 5.48v6.088zM4.306 6.581c-1.144 0-2.068-.926-2.068-2.072 0-1.146.924-2.071 2.068-2.071s2.068.925 2.068 2.071c-.001 1.146-.925 2.072-2.068 2.072zM5.358 20.452H1.804V9.29h3.554v11.162zM22.225 0H1.771C.794 0 0 .774 0 1.728v20.544C0 23.226.794 24 1.771 24h20.454c.976 0 1.771-.774 1.771-1.728V1.728C24 .774 23.205 0 22.225 0z"/></svg>
-                        </a>
-                    </div>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="https://drive.google.com/file/d/1t9W4KzCBn9ZRoK-DLNSBuTR6hHqfXs6U/view?usp=drivesdk" download target="_blank"  class="inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
-                            Download CV
-                        </a>
-                        <a href="#projects"  class=" inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2 flex justify-center items-center">
-                    <div class="w-full max-w-xs md:max-w-md rounded-full bg-zinc-100 p-1 shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:rotate-2 hover:shadow-2xl">
-                        <img src="./img/chidex.png" alt="Profile Photo" class="rounded-full w-full h-auto" />
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-semibold uppercase">
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">HTML</span>
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">CSS</span>
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">Bootstrap</span>
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">TailWind</span>
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">JavaScript</span>
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">React</span>
-                <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">GitHub</span>
-            </div>
-        </section>
-       
-        <!-- About Section -->
-    <section id="about" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
-            <div>
-                <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">
-                    About My <span class="text-slate-100">Development Journey</span>
-                </h2>
                 
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <p class="text-gray-300 max-w-lg mb-6 text-balance leading-relaxed">
-                            I'm a passionate frontend developer with expertise in modern web technologies. I combine technical skills with creative design to build exceptional user experiences that drive business results.
-                        </p>
-                        
-                        <p class="text-gray-300 max-w-lg mb-6 text-balance leading-relaxed">
-                            My approach focuses on clean, maintainable code, responsive design, and optimal performance. I stay current with the latest technologies and best practices to deliver cutting-edge solutions.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-yellow-300">15+</div>
-                                <div class="text-zinc-100">Projects Completed</div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden bg-zinc-800">
+                    <div class="px-4 pt-2 pb-3 space-y-1">
+                        <a href="#about" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">About</a>
+                        <a href="#skills" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Skills</a>
+                        <a href="#services" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Services</a>
+                        <a href="#projects" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Projects</a>
+                        <a href="#contact" class="block px-3 py-2 text-zinc-100 hover:text-slate-500 transition-colors">Contact</a>
+                        <a href="mailto:chiderannamani442@gmail.com" class="block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 hover:border-slate-500 hover:text-zinc-100">Hire Me</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-6 md:p-10 mt-16 md:mt-0 md:ml-64 lg:ml-72">
+                 <!-- Hero Section -->
+                <section class="section rounded-2xl mb-8 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20 ">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4 items-center p-1">
+                        <div class="order-2 md:order-1">
+                            <h1 id="animated-text" class="text-2xl sm:text-5xl md:text-3xl font-extrabold text-white leading-tight tracking-wide">
+                                <span class="typewriter-text"></span>
+                                <!-- The cursor element -->
+                                <span class="typewriter-cursor"></span>
+                            </h1>
+                            <!-- <p class="uppercase text-2xl sm:text-3xl lg:text-4xl font-extrabold my-4">
+                                frontend <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">developer</span>
+                            </p> -->
+                            <p class="text-gray-300 max-w-lg mb-6 text-balance">I am a versatile front-end developer with expertise in a wide range of modern web technologies, including HTML, CSS, and JavaScript. I create user-centric digital experiences, leveraging frameworks like React and styling tools like Tailwind CSS and Bootstrap to build responsive and intuitive interfaces.</p>
+                            <div class="flex space-x-4 mb-6">
+                                <a href="https://github.com/C6250hidex" target="_blank" aria-label="GitHub" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577v-2.002c-3.336.726-4.043-1.61-4.043-1.61-.546-1.385-1.332-1.754-1.332-1.754-1.087-.743.082-.727.082-.727 1.206.086 1.838 1.238 1.838 1.238 1.07 1.838 2.809 1.305 3.49-.997.108-.775.42-.31 1.637-.197-2.73.308-5.602-1.365-5.602-4.823 0-1.066.38-1.933 1.002-2.61-.106-.255-.436-1.235.1-2.573 0 0 .82-.26 2.68 1.238 2.593-.72 5.395-.72 7.988 0 1.86-1.498 2.68-1.238 2.68-1.238.536 1.338.206 2.318.1 2.573.623.677 1.002 1.544 1.002 2.61 0 3.468-2.872 5.127-5.604 5.435.438.378.823 1.102.823 2.223v3.315c0 .32.22.687.822.577C20.562 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                                <a href="https://x.com/ChideraNna37519" target="_blank" aria-label="Twitter" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6L18 18"/></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366" target="_blank" aria-label="linkedin" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.48c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.58h-3.554V9.29h3.418v1.561h.048c.478-.896 1.637-1.853 3.37-1.853 3.618 0 4.287 2.378 4.287 5.48v6.088zM4.306 6.581c-1.144 0-2.068-.926-2.068-2.072 0-1.146.924-2.071 2.068-2.071s2.068.925 2.068 2.071c-.001 1.146-.925 2.072-2.068 2.072zM5.358 20.452H1.804V9.29h3.554v11.162zM22.225 0H1.771C.794 0 0 .774 0 1.728v20.544C0 23.226.794 24 1.771 24h20.454c.976 0 1.771-.774 1.771-1.728V1.728C24 .774 23.205 0 22.225 0z"/></svg>
+                                </a>
                             </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-green-400">100%</div>
-                                <div class="text-zinc-100">Client Satisfaction</div>
+                            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                                <a href="https://drive.google.com/file/d/1t9W4KzCBn9ZRoK-DLNSBuTR6hHqfXs6U/view?usp=drivesdk" download target="_blank"  class="inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
+                                    Download CV
+                                </a>
+                                <a href="#projects"  class=" inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
+                                    View Project
+                                </a>
                             </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-blue-300">2+</div>
-                                <div class="text-zinc-100">Years Experience</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-red-300">24/7</div>
-                                <div class="text-zinc-100">Support Available</div>
+                        </div>
+                        <div class="order-1 md:order-2 flex justify-center items-center">
+                            <div class="w-full max-w-xs md:max-w-md rounded-full bg-zinc-100 p-1 shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:rotate-2 hover:shadow-2xl">
+                                <img src="./img/chidex.png" alt="Profile Photo" class="rounded-full w-full h-auto" />
                             </div>
                         </div>
                     </div>
+                    <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-semibold uppercase">
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">HTML</span>
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">CSS</span>
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">Bootstrap</span>
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">TailWind</span>
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">JavaScript</span>
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">React</span>
+                        <span class="rounded-full bg-zinc-100 text-zinc-900 px-4 py-2 hover:bg-slate-500 hover:text-zinc-100 transition-colors duration-300">GitHub</span>
+                    </div>
+                </section>
+                <!-- Additional Sections Placeholders -->
+                <!-- About Section -->
+                <section id="about" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+                    <div>
+                        <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">About My <span class="text-slate-100">Development Journey</span>
+                        </h2>   
+                        <div class="grid md:grid-cols-1 gap-4 items-center">
+                            <div class="space-y-6">
+                                <p class="text-gray-300 max-w-lg mb-6 text-balance leading-relaxed">I'm a passionate frontend developer with expertise in modern web technologies. I combine technical skills with creative design to build exceptional user experiences that drive business results.</p>
+                                <p class="text-gray-300 max-w-lg mb-6 text-balance leading-relaxed">My approach focuses on clean, maintainable code, responsive design, and optimal performance. I stay current with the latest technologies and best practices to deliver cutting-edge solutions.</p>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-yellow-300">15+</div>
+                                        <div class="text-zinc-100">Projects Completed</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-green-400">100%</div>
+                                        <div class="text-zinc-100">Client Satisfaction</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-blue-300">2+</div>
+                                        <div class="text-zinc-100">Years Experience</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-red-300">24/7</div>
+                                        <div class="text-zinc-100">Support Available</div>
+                                   </div>
+                                </div>
+                            </div>
+                            <!-- Code Example -->
+                            <div class="code-block">
+                                <div class="code-header"></div>
+                                <div class="p-6 text-sm">
+                                    <div class="text-green-400 mb-2">// Clean, semantic React component</div>
+                                    <div class="text-blue-300">const</div> <div class="text-yellow-300 inline">Portfolio</div> <div class="text-white inline">= () => {</div>
+                                    <div class="ml-4 text-blue-300">return</div> <div class="text-white inline">(</div>
+                                    <div class="ml-8 text-red-300">&lt;section</div> <div class="text-yellow-300 inline">className=</div><div class="text-green-300 inline">"hero"</div><div class="text-red-300 inline">&gt;</div>
+                                    <div class="ml-12 text-red-300">&lt;h1&gt;</div><div class="text-white inline">Frontend Developer</div><div class="text-red-300 inline">&lt;/h1&gt;</div>
+                                    <div class="ml-12 text-red-300">&lt;p&gt;</div><div class="text-white inline">Creating amazing experiences</div><div class="text-red-300 inline">&lt;/p&gt;</div>
+                                    <div class="ml-8 text-red-300">&lt;/section&gt;</div>
+                                    <div class="ml-4 text-white">);</div>
+                                    <div class="text-white">};</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Skills Section -->
+                <section id="skills" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Technical <span class="text-slate-100">Skills</span></h2>
+                        <p class="text-lg max-w-4xl mx-auto">Proficient in modern frontend technologies and frameworks, with a focus on performance and user experience.</p>
+                    </div>
+                    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Frontend Technologies -->
+                        <div class="skill-item border-2 border-zinc-100  p-8 rounded-xl shadow-sm">
+                            <div class="text-cyan-500 mb-4">
+                                <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-zinc-100 mb-4 text-center">Frontend Core</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">HTML5</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-cyan-500 h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">CSS3</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-cyan-500 h-2 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">JavaScript</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-cyan-500 h-2 rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Frameworks & Libraries -->
+                        <div class="skill-item border-2 border-zinc-100  p-8 rounded-xl shadow-sm">
+                            <div class="text-orange-500 mb-4">
+                                <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.36-.034-.471 0-.92.014-1.36.034.44-.572.895-1.096 1.36-1.564zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.099 2.21-.099zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.148.225-.39.435-.788.636-1.19zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.36.034.471 0 .92-.014 1.36-.034-.44.572-.895 1.095-1.36 1.56-.455-.467-.91-.991-1.36-1.56z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-zinc-100 mb-4 text-center">Frameworks</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">React</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-orange-500 h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">Tailwind CSS</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-orange-500 h-2 rounded-full" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">Bootstrap</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-orange-500 h-2 rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tools & Workflow -->
+                        <div class="skill-item border-2 border-zinc-100  p-8 rounded-xl shadow-sm">
+                            <div class="text-yellow-500 mb-4">
+                                <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21.7 20.3l-5.4-5.4c1.1-1.8.9-4.2-.7-5.7-1.6-1.6-4-1.8-5.8-.6l2.2 2.2-3.1 3.1-2.2-2.2c-1.1 1.8-1 4.1.6 5.7 1.5 1.6 3.9 1.8 5.7.7l5.4 5.4c.4.4 1 .4 1.4 0l2-2c.4-.4.4-1 0-1.4zM7.5 2c-.8 0-1.5.3-2.1.9-.8.8-1 2-.5 3l2.1 4.4L9.3 7l-4.4-2.1c-.5-.2-.7-.8-.3-1.2.2-.2.5-.3.8-.3.2 0 .3 0 .5.1l4.4 2.1L10.9 4 7.5 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-zinc-100 mb-4 text-center">Tools</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">Git</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">GitHub</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300 font-semibold">Vs code</span>
+                                    <div class="w-24 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <section id="services" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+                    <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Services</h2>
+                    <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">I provide end-to-end frontend development services to bring your ideas to life.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mt-6">
+                        <!-- Service Card 1 -->
+                        <div class="p-6 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                            <div class="text-slate-500 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg"class="h-12 w-12 "  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M80-680v-80q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v80h-80v-80H160v80H80Zm240 560v-80H160q-33 0-56.5-23.5T80-280v-80h80v80h640v-80h80v80q0 33-23.5 56.5T800-200H640v80H320Zm160-400Zm-288 0 104-104-56-56L80-520l160 160 56-56-104-104Zm576 0L664-416l56 56 160-160-160-160-56 56 104 104Z"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-zinc-100">Frontend Development</h3>
+                            <p class="mt-2 text-gray-400">Building fast, scalable websites using HTML, CSS, JavaScript & React that adept to any device.</p>
+                        </div>
+                        <!-- Service Card 2 -->
+                        <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                            <div class="text-slate-500 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20.25l-6-6M4 14.25l6-6M10 4.5l-6 6M4 14.25h16a2 2 0 002-2V7.5a2 2 0 00-2-2H4a2 2 0 00-2 2v4.5" />
+                                </svg>
+                            </div>
+                                <h3 class="text-2xl font-semibold text-zinc-100">Branding</h3>
+                                <p class="mt-2 text-gray-400">I craft unique brand identities that tell your story and resonate with your audience.</p>
+                        </div>
+                        <!-- Service Card 3 -->
+                        <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                            <div class="text-slate-500 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.75l6-6M18 12.75l-6-6M12 18.75V5.25M12 18.75a6 6 0 100-12 6 6 0 000 12z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-zinc-100">UI/UX Implementation</h3>
+                            <p class="mt-2 text-gray-400">Converting Figma/Adobe XD designs into pixel-perfect interactive UIs.</p>
+                        </div>
+                        <!-- Service Card 4 -->
+                        <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                            <div class="text-slate-500 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12"  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M120-120v-520h200v-200h520v720H120Zm520-80h120v-560H400v120h240v440Zm-240 0h160v-360H400v360Zm-200 0h120v-360H200v360Zm440-440v80-80Zm-320 80Zm240 0Zm80-80Z"></svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-zinc-100">Responsive Design</h3>
+                            <p class="mt-2 text-gray-400">Designing clean, mobile-friendly websites optimized for all devices.</p>
+                        </div>
+                        <!-- Service Card 5 -->
+                        <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
+                            <div class="text-slate-500 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 "  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v44h-80v-360H280v720h200v80H280Zm515 0-88-88q-11 5-23 6.5t-24 1.5q-59 0-99.5-40.5T520-259q0-18 4.5-35t12.5-32l95 95 56-57-95-94q15-8 32-12.5t35-4.5q58 0 99 40.5t41 99.5q0 12-2 24t-7 23l89 88-85 84ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720ZM280-120v-720 720Z"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-zinc-100">Maintenance & Support</h3>
+                            <p class="mt-2 text-gray-400">After launch, I offer support and updates to keep your site secure and running smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-3xl shadow-2xl border border-zinc-500 transform hover:scale-10 transition-transform duration-300l text-center mt-10">
+                        <h3 class="text-3xl font-extrabold text-zinc-100">Ready to Start Your Project?</h3>
+                        <p class="text-xl font-medium text-slate-500 my-5">Let’s discuss how I can help bring your web development vision to life</p>
+                        <a class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100" href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="linkedin">Get Started Today</a>
+                    </div>
+                </section>
+                <!-- Shoe Business Advert Section -->
+                <section id="shoe-ad-section" class="relative bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 text-white py-12 px-6">
+                
+                <!-- Close Button -->
+                <button id="close-section-ad" class="absolute top-3 right-3 bg-white text-red-600 rounded-full px-2 py-1 text-sm font-bold shadow-md hover:bg-gray-200">
+                    ✖
+                </button>
+
+                <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
                     
-                    <!-- Code Example -->
-                    <div class="code-block">
-                        <div class="code-header"></div>
-                        <div class="p-6 text-sm">
-                            <div class="text-green-400 mb-2">// Clean, semantic React component</div>
-                            <div class="text-blue-300">const</div> <div class="text-yellow-300 inline">Portfolio</div> <div class="text-white inline">= () => {</div>
-                            <div class="ml-4 text-blue-300">return</div> <div class="text-white inline">(</div>
-                            <div class="ml-8 text-red-300">&lt;section</div> <div class="text-yellow-300 inline">className=</div><div class="text-green-300 inline">"hero"</div><div class="text-red-300 inline">&gt;</div>
-                            <div class="ml-12 text-red-300">&lt;h1&gt;</div><div class="text-white inline">Frontend Developer</div><div class="text-red-300 inline">&lt;/h1&gt;</div>
-                            <div class="ml-12 text-red-300">&lt;p&gt;</div><div class="text-white inline">Creating amazing experiences</div><div class="text-red-300 inline">&lt;/p&gt;</div>
-                            <div class="ml-8 text-red-300">&lt;/section&gt;</div>
-                            <div class="ml-4 text-white">);</div>
-                            <div class="text-white">};</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <!-- Skills Section -->
-    <section id="skills" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">
-                    Technical <span class="text-slate-100">Skills</span>
-                </h2>
-                <p class="text-lg max-w-4xl mx-auto">
-                    Proficient in modern frontend technologies and frameworks, with a focus on performance and user experience.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend Technologies -->
-                <div class="skill-item border-2 border-zinc-100  p-8 rounded-xl shadow-sm">
-                    <div class="text-cyan-500 mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-zinc-100 mb-4 text-center">Frontend Core</h3>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">HTML5</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-cyan-500 h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">CSS3</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-cyan-500 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">JavaScript</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-cyan-500 h-2 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Frameworks & Libraries -->
-                <div class="skill-item border-2 border-zinc-100  p-8 rounded-xl shadow-sm">
-                    <div class="text-orange-500 mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.36-.034-.471 0-.92.014-1.36.034.44-.572.895-1.096 1.36-1.564zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.099 2.21-.099zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.148.225-.39.435-.788.636-1.19zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.36.034.471 0 .92-.014 1.36-.034-.44.572-.895 1.095-1.36 1.56-.455-.467-.91-.991-1.36-1.56z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-zinc-100 mb-4 text-center">Frameworks</h3>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">React</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-orange-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">Tailwind CSS</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-orange-500 h-2 rounded-full" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">Bootstrap</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-orange-500 h-2 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tools & Workflow -->
-                <div class="skill-item border-2 border-zinc-100  p-8 rounded-xl shadow-sm">
-                    <div class="text-yellow-500 mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M21.7 20.3l-5.4-5.4c1.1-1.8.9-4.2-.7-5.7-1.6-1.6-4-1.8-5.8-.6l2.2 2.2-3.1 3.1-2.2-2.2c-1.1 1.8-1 4.1.6 5.7 1.5 1.6 3.9 1.8 5.7.7l5.4 5.4c.4.4 1 .4 1.4 0l2-2c.4-.4.4-1 0-1.4zM7.5 2c-.8 0-1.5.3-2.1.9-.8.8-1 2-.5 3l2.1 4.4L9.3 7l-4.4-2.1c-.5-.2-.7-.8-.3-1.2.2-.2.5-.3.8-.3.2 0 .3 0 .5.1l4.4 2.1L10.9 4 7.5 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-zinc-100 mb-4 text-center">Tools</h3>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">Git</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">GitHub</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-slate-300 font-semibold">Vs code</span>
-                            <div class="w-24 bg-gray-200 rounded-full h-2">
-                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-            </section>                                 <!-- Services Section -->
-        <section id="services" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
-            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Services</h2>
-            <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">I provide end-to-end frontend development services to bring your ideas to life.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-                <!-- Service Card 1 -->
-                <div class="p-6 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-slate-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg"class="h-12 w-12 "  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M80-680v-80q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v80h-80v-80H160v80H80Zm240 560v-80H160q-33 0-56.5-23.5T80-280v-80h80v80h640v-80h80v80q0 33-23.5 56.5T800-200H640v80H320Zm160-400Zm-288 0 104-104-56-56L80-520l160 160 56-56-104-104Zm576 0L664-416l56 56 160-160-160-160-56 56 104 104Z"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-zinc-100">Frontend Development</h3>
-                    <p class="mt-2 text-gray-400">Building fast, scalable websites using HTML, CSS, JavaScript & React that adept to any device.</p>
-                </div>
-                <!-- Service Card 2 -->
-                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-slate-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20.25l-6-6M4 14.25l6-6M10 4.5l-6 6M4 14.25h16a2 2 0 002-2V7.5a2 2 0 00-2-2H4a2 2 0 00-2 2v4.5" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-zinc-100">Branding</h3>
-                    <p class="mt-2 text-gray-400">I craft unique brand identities that tell your story and resonate with your audience.</p>
-                </div>
-                <!-- Service Card 3 -->
-                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-slate-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.75l6-6M18 12.75l-6-6M12 18.75V5.25M12 18.75a6 6 0 100-12 6 6 0 000 12z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-zinc-100">UI/UX Implementation</h3>
-                    <p class="mt-2 text-gray-400">Converting Figma/Adobe XD designs into pixel-perfect interactive UIs.</p>
-                </div>
-                <!-- Service Card 4 -->
-                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-slate-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12"  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M120-120v-520h200v-200h520v720H120Zm520-80h120v-560H400v120h240v440Zm-240 0h160v-360H400v360Zm-200 0h120v-360H200v360Zm440-440v80-80Zm-320 80Zm240 0Zm80-80Z"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-zinc-100">Responsive Design</h3>
-                    <p class="mt-2 text-gray-400">Designing clean, mobile-friendly websites optimized for all devices.</p>
-                </div>
-                <!-- Service Card 5 -->
-                <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-slate-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 "  viewBox="0 -960 960 960" fill="#64748b" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v44h-80v-360H280v720h200v80H280Zm515 0-88-88q-11 5-23 6.5t-24 1.5q-59 0-99.5-40.5T520-259q0-18 4.5-35t12.5-32l95 95 56-57-95-94q15-8 32-12.5t35-4.5q58 0 99 40.5t41 99.5q0 12-2 24t-7 23l89 88-85 84ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720ZM280-120v-720 720Z"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-zinc-100">Maintenance & Support</h3>
-                    <p class="mt-2 text-gray-400">After launch, I offer support and updates to keep your site secure and running smoothly.</p>
-                </div>
-            </div>
-            <div class="p-6 rounded-3xl shadow-2xl border border-zinc-500 transform hover:scale-10 transition-transform duration-300l text-center mt-10">
-                    <h3 class="text-3xl font-extrabold text-zinc-100">Ready to Start Your Project?</h3>
-                    <p class="text-xl font-medium text-slate-500 my-5">Let’s discuss how I can help bring your web development vision to life</p>
-                    <a class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100" href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="linkedin">Get Started Today
+                    <!-- Left Side: Text -->
+                    <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                        👟 Step Up Your Style with <span class="text-yellow-300">Chidex Footwears</span>
+                    </h2>
+                    <p class="text-lg mb-6">
+                        Discover premium, affordable, and stylish footwear for every occasion.  
+                        Handmade with quality, built for comfort, designed for confidence.  
+                    </p>
+                    <a href="#shop-now" 
+                        class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-yellow-300 transition duration-300">
+                        Shop Now
                     </a>
-            </div>
-        </section>
-          <!-- Shoe Business Advert Section -->
-    <section id="shoe-ad-section" class="relative bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 text-white py-12 px-6">
-      
-      <!-- Close Button -->
-      <button id="close-section-ad" class="absolute top-3 right-3 bg-white text-red-600 rounded-full px-2 py-1 text-sm font-bold shadow-md hover:bg-gray-200">
-        ✖
-      </button>
+                    </div>
 
-      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        
-        <!-- Left Side: Text -->
-        <div class="flex-1 text-center md:text-left">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
-            👟 Step Up Your Style with <span class="text-yellow-300">Chidex Footwears</span>
-          </h2>
-          <p class="text-lg mb-6">
-            Discover premium, affordable, and stylish footwear for every occasion.  
-            Handmade with quality, built for comfort, designed for confidence.  
-          </p>
-          <a href="#shop-now" 
-             class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-yellow-300 transition duration-300">
-            Shop Now
-          </a>
-        </div>
-
-        <!-- Right Side: Image -->
-        <div class="flex-1">
-          <img src="./img/shoe1.jpg" 
-               alt="Shoe Business Advert" 
-               class="rounded-2xl shadow-xl w-full object-cover" />
-        </div>
-      </div>
-    </section>
-        <section class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
-        <!-- Pricing Section Header -->
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">
-                Flexible Pricing <span class="text-slate-100">for Your Business</span>
-            </h2>
-            <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">
-                Discover the perfect plan to elevate your online presence. Whether you're launching a new site or enhancing an existing one, we have a solution that fits your needs.
-            </p>
-        </div>
-
-        <!-- Pricing Cards Container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Starter Plan Card -->
-            <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                <h2 class=" text-center text-2xl font-bold text-zinc-100 mb-2">Starter</h2>
-                <p class="text-sm font-medium text-slate-200 mb-2">Ideal for small projects & personal websites</p>
-                <div class="text-slate-400 mb-4 justify-center">
-                    <span class="text-5xl font-extrabold">$250</span>
-                    <span class="text-lg text-slate-400 font-medium">/project</span>
-                </div>
-                <ul class="text-left w-full mb-8 space-y-3 text-zinc-300">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        1-2 Page Website
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Custom Design Concepts
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Mobile-First Responsive Layout
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Basic SEO Optimization
-                    </li>
-                </ul>
-                <button class="inline-flex items-center justify-center w-full rounded-lg border-2 border-zinc-100 px-4 py-2 text-zinc-100 transition-colors duration-300 hover:border-slate-500 hover:text-slate-500">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- Pro Plan Card -->
-            <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-center text-2xl font-bold text-zinc-100 mb-2">Pro</h2>
-                <p class="text-sm font-medium text-slate-200 mb-2">Enhanced features for growing businesses</p>
-                <div class="text-slate-400 mb-4 justify-center">
-                    <span class="text-5xl font-extrabold">$500</span>
-                    <span class="text-lg text-slate-400 font-medium">/project</span>
-                </div>
-                <ul class="text-left w-full mb-8 space-y-3 text-zinc-300">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Up to 3 Pages
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Standard SEO Optimization
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        CRM Integration
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Basic Maintenance
-                    </li>
-                </ul>
-                <button class="inline-flex items-center justify-center w-full rounded-lg border-2 border-zinc-100 px-4 py-2 text-zinc-100 transition-colors duration-300 hover:border-slate-500 hover:text-slate-500">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- Professional Plan Card (Featured) -->
-            <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl ring-4 ring-slate-500 transform hover:scale-105 transition-transform duration-300">
-                <span class="bg-slate-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block">Most Popular</span>
-                <h2 class="text-center text-2xl font-bold text-zinc-100 mb-2">Professional</h2>
-                <p class="text-sm font-medium text-slate-200 mb-2">Perfect for small businesses & portfolios</p>
-                <div class="text-slate-400 mb-4 justify-center">
-                    <span class="text-5xl font-extrabold">$800</span>
-                    <span class="text-lg text-slate-400 font-medium">/project</span>
-                </div>
-                <ul class="text-left w-full mb-8 space-y-3 text-zinc-300">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Up to 5 Pages
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Advanced SEO Optimization
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Social Media Integration
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Contact Form & Analytics Setup
-                    </li>
-                </ul>
-                <button class="inline-flex items-center justify-center w-full rounded-lg border-2 border-zinc-100 px-4 py-2 text-zinc-100 transition-colors duration-300 hover:border-slate-500 hover:text-slate-500">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- Ultimate Plan Card -->
-            <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-center text-2xl font-bold text-zinc-100 mb-2">Ultimate</h2>
-                <p class="text-sm font-medium text-slate-200 mb-2">Comprehensive solution for peak performance</p>
-                <div class="text-slate-400 mb-4 justify-center">
-                    <span class="text-5xl font-extrabold">$1200</span>
-                    <span class="text-lg text-slate-400 font-medium">/project</span>
-                </div>
-                <ul class="text-left w-full mb-8 space-y-3 text-zinc-300">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Everything in Professional
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Advanced Security & Performance
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        1 Year Free Hosting
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Priority Support
-                    </li>
-                </ul>
-                <button class="inline-flex items-center justify-center w-full rounded-lg border-2 border-zinc-100 px-4 py-2 text-zinc-100 transition-colors duration-300 hover:border-slate-500 hover:text-slate-500">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- Enterprise Plan Card -->
-            <div class="p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-100 transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-center text-2xl font-bold text-zinc-100 mb-2">Enterprise</h2>
-                <p class="text-sm font-medium text-slate-200 mb-2">For large businesses with custom needs</p>
-                <div class="text-slate-400 mb-4 justify-center">
-                    <span class="text-5xl font-extrabold">Custom</span>
-                    <span class="text-lg text-slate-400 font-medium">/quote</span>
-                </div>
-                <ul class="text-left w-full mb-8 space-y-3 text-zinc-300">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Unlimited Pages
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Full E-commerce Integration
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Advanced Performance & Security
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-zinc-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Dedicated Support & Maintenance
-                    </li>
-                </ul>
-                <button class="inline-flex items-center justify-center w-full rounded-lg border-2 border-zinc-100 px-4 py-2 text-zinc-100 transition-colors duration-300 hover:border-slate-500 hover:text-slate-500">
-                    Contact for Quote
-                </button>
-            </div>
-        </div>
-    </section>
-
-        <!-- Project section-->
-        <section id="projects" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
-            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Projects</h2>
-            <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">Explore my latest work showcasing innovative solutions and creative implementations</p>
-            <!-- Filter buttons -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12 mt-6">
-                <button class="filter-btn active block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="all">
-                    All Projects
-                </button>
-                <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="react">
-                    React
-                </button>
-                <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="javascript">
-                    JavaScript
-                </button>
-                <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="css">
-                    CSS
-                </button>
-                <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="responsive">
-                    Responsive
-                </button>
-            </div>
-            
-        
-            <div class="bg-zinc-900 text-zinc-100 rounded-3xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <!-- project 1-->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="css">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/kil1.jpg" alt="Kilimanjaro-project-image" >
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Kilimanjaro restaurant website</h3>
-                        <p class="text-balance mb-2 font-semibold">This restaurant website showcases the menu, ambiance, and services, allowing customers to make online reservations and providing contact and location details.</p>
-                        <a href="food-website-tau-peach.vercel.app" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                    <!-- Right Side: Image -->
+                    <div class="flex-1">
+                    <img src="./img/shoe1.jpg" 
+                        alt="Shoe Business Advert" 
+                        class="rounded-2xl shadow-xl w-full object-cover" />
                     </div>
                 </div>
-                <!-- project 2 -->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="css">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/mov1.jpg" alt="moviebox-project-image" >
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">moviebox</h3>
-                        <p class="text-balance mb-2 font-semibold">The Movie Box website is an online platform for streaming and downloading movies and TV shows, with a vast library of content organized by genre, popularity, and other categories.</p>
-                        <a href="https://c6250hidex.github.io/movie-box/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
-                    </div>
-                </div>
-                <!-- project 3 -->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="javascript">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/Home Interior Designs - Google Chrome 27_06_2025 14_12_19.png" alt="chidex-interior_project-image" >
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Chidex Interior</h3>
-                        <p class="text-balance mb-2 font-semibold">Chidex Interiors helps people create beautiful, functional, and inspiring living spaces that reflect their personality and promote well-being.</p>
-                        <a href="https://chidex-interior.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
-                    </div>
-                </div>
-                <!-- project 4 -->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="responsive">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/loop1.jpg" alt="loopstudios-project-image">
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">loopstudios</h3>
-                        <p class="text-balance mb-2 font-semibold">Loopstudios' landing page showcases their creative work and interactive experiences, highlighting their expertise in AR/VR and innovative design to attract new collaborations.</p>
-                        <a href="https://loopstudios-landing-page-main-orpin.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
-                    </div>
-                </div>
-                <!-- project 5 -->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="javascript">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/TravelSmart .png" alt="TravelSmart-project-image" >
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Travelsmart</h3>
-                        <p class="text-balance mb-2 font-semibold">Travel Smart is a website that helps users plan and book tours. It uses "smart routes" and local knowledge to create personalized journeys that combine adventure, culture, and relaxation.</p>
-                        <a href="travelsmart-theta.vercel.app" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
-                    </div>
-                </div>
-                <!-- project 6 -->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="responsive">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/rocket.png" alt="Acme_Rocket-project-image" >
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">acme rockets</h3>
-                        <p class="text-balance mb-2 font-semibold">The Acme Rockets landing page is a satirical portfolio website that showcases fictional rockets and features humorous testimonials from cartoon characters, paying tribute to its origins</p>
-                        <a href="tailwind-firstproject.vercel.app" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
-                    </div>
-                </div>
-                <!-- project seven -->
-                <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="react">
-                    <img class="h-full w-full object-fill rounded-xl " src="./img/todo.png" alt="Acme_Rocket-project-image" >
-                    <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 md:h-48 lg:h-56">
-                        <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">todo list</h3>
-                        <p class="text-balance mb-2 font-semibold">A to-do list app is a digital tool for organizing tasks. It allows users to create, manage, and track tasks by setting deadlines and reminders. It helps improve productivity by keeping everything organized in one place.</p>
-                        <a href="https://react-todo-app-omega-virid.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
-                    </div>
-                </div>
-                <!-- project ends here -->
-            </div>
-            <div class="p-6 rounded-3xl shadow-2xl border border-zinc-500 transform hover:scale-10 transition-transform duration-300l text-center my-5">
-                    <h3 class="text-3xl font-extrabold text-zinc-100">Want to See More?</h3>
-                    <p class="text-xl font-medium text-slate-500 my-5">Check out my complete portfolio on GitHub for more exciting projects and contributions</p>
-                    <a class="inline-flex items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100" href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="linkedin">
-                        <svg role="img" viewBox="0 0 24 24" fill="currentColor" width="40px">
-                        <path
-                            d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.71.08-.71 1.17.08 1.8 1.2 1.8 1.2 1.04 1.8 2.72 1.28 3.38.98.1-.78.4-1.28.72-1.58-2.55-.29-5.24-1.27-5.24-5.65 0-1.24.44-2.26 1.16-3.06-.12-.29-.5-1.47.1-3.06 0 0 .95-.3 3.12 1.16a10.8 10.8 0 012.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.12-1.16 3.12-1.16.6 1.59.22 2.77.1 3.06.72.8 1.16 1.82 1.16 3.06 0 4.39-2.7 5.35-5.27 5.63.42.36.8 1.1.8 2.22v3.29c0 .31.21.66.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
-                    </svg>View All Projects</a>
-            </div>
-        </section>
-
-        <section id="contact" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
-            <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Contact Us</h2>
-            <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">We're here to answer your questions, provide support, or discuss potential collaborations. Fill out the form or reach out directly via email or phone.  Let's start a conversation and see how we can work together to achieve your goals.</p>
-            <div class="bg-zinc-900 text-zinc-100 rounded-3xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-center mt-6">
-                <div>
-                    <div >
-                        <div class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 mb-4 ">
-                            <h3 class="text-2xl text-slate-300 mb-4 font-bold">Contact Information</h3>
-                            <div>
-                               <div class="flex gap-1 md:gap-3 flex-shrink flex-wrap items-center mb-3">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-zinc-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span class="text-base md:text-xl">chiderannamani442@gmail.com</span>
-                                </div>
-                                <div class="flex gap-3 items-center mb-3">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-zinc-500 ">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                    <span class="text-base md:text-xl">+234 708 959 6250</span>
-                                </div>
-                                <div class="flex gap-3 items-center">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-zinc-500 ">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                    <span class="text-base md:text-xl">Enugu, Nigeria</span>
-                                </div>
-                            </div>
+                </section>
+                    <!-- Project section-->
+                    <section id="projects" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+                        <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Projects</h2>
+                        <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">Explore my latest work showcasing innovative solutions and creative implementations</p>
+                        <!-- Filter buttons -->
+                        <div class="flex flex-wrap justify-center gap-4 mb-12 mt-6">
+                            <button class="filter-btn active block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="all">
+                                All Projects
+                            </button>
+                            <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="react">
+                                React
+                            </button>
+                            <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="javascript">
+                                JavaScript
+                            </button>
+                            <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="css">
+                                CSS
+                            </button>
+                            <button class="filter-btn block px-3 text-center py-2 rounded-lg border-2 border-zinc-100 text-slate-500 transition-colors duration-300 hover:border-slate-500  hover:text-zinc-100" data-filter="responsive">
+                                Responsive
+                            </button>
                         </div>
                         
-                        <div class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 ">
-                            <h3 class="text-2xl text-slate-300 mb-4 font-bold">Quick Actions</h3>
-                            <div>
-                                <a href="#" class="flex justify-center gap-3 w-full items-center py-2 rounded-lg border-2 border-zinc-10 transition-colors duration-300 hover:border-slate-500 text-zinc-100 mb-4 text-base md:text-xl">
-                                    <svg class="h-12 w-12 text-green-300" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                                    </svg>
-                                    WhatsApp
-                                </a>
-                                <a href="tel:+2341234567890" class="flex justify-center gap-3 w-full items-center py-2 rounded-lg border-2 border-zinc-100 transition-colors duration-300 hover:border-slate-500 text-zinc-100 md:text-xl text-base">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-green-300 ">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                    Call Now
-                                </a>
+                    
+                        <div class="bg-zinc-900 text-zinc-100 rounded-3xl grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- project 1-->
+                            <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="css">
+                                <img class="h-full w-full object-fill rounded-xl " src="./img/kil1.jpg" alt="Kilimanjaro-project-image" >
+                                <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
+                                    <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Kilimanjaro restaurant website</h3>
+                                    <p class="text-balance mb-2 font-semibold">This restaurant website showcases the menu, ambiance, and services, allowing customers to make online reservations and providing contact and location details.</p>
+                                    <a href="food-website-tau-peach.vercel.app" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                                </div>
+                            </div>
+                            <!-- project 2 -->
+                            <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="css">
+                                <img class="h-full w-full object-fill rounded-xl " src="./img/mov1.jpg" alt="moviebox-project-image" >
+                                <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
+                                    <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">moviebox</h3>
+                                    <p class="text-balance mb-2 font-semibold">The Movie Box website is an online platform for streaming and downloading movies and TV shows, with a vast library of content organized by genre, popularity, and other categories.</p>
+                                    <a href="https://c6250hidex.github.io/movie-box/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                                </div>
+                            </div>
+                            <!-- project 3 -->
+                            <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="javascript">
+                                <img class="h-full w-full object-fill rounded-xl " src="./img/Home Interior Designs - Google Chrome 27_06_2025 14_12_19.png" alt="chidex-interior_project-image" >
+                                <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
+                                    <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Chidex Interior</h3>
+                                    <p class="text-balance mb-2 font-semibold">Chidex Interiors helps people create beautiful, functional, and inspiring living spaces that reflect their personality and promote well-being.</p>
+                                    <a href="https://chidex-interior.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                                </div>
+                            </div>
+                            <!-- project 4 -->
+                            <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="responsive">
+                                <img class="h-full w-full object-fill rounded-xl " src="./img/loop1.jpg" alt="loopstudios-project-image">
+                                <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
+                                    <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">loopstudios</h3>
+                                    <p class="text-balance mb-2 font-semibold">Loopstudios' landing page showcases their creative work and interactive experiences, highlighting their expertise in AR/VR and innovative design to attract new collaborations.</p>
+                                    <a href="https://loopstudios-landing-page-main-orpin.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                                </div>
+                            </div>
+                            <!-- project 5 -->
+                            <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="javascript">
+                                <img class="h-full w-full object-fill rounded-xl " src="./img/TravelSmart .png" alt="TravelSmart-project-image" >
+                                <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0  md:h-48 lg:h-56">
+                                    <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">Travelsmart</h3>
+                                    <p class="text-balance mb-2 font-semibold">Travel Smart is a website that helps users plan and book tours. It uses "smart routes" and local knowledge to create personalized journeys that combine adventure, culture, and relaxation.</p>
+                                    <a href="travelsmart-theta.vercel.app" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                                </div>
+                            </div>
+                            <!-- project 6 -->
+                            <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="responsive">
+                                <img class="h-full w-full object-fill rounded-xl " src="./img/rocket.png" alt="Acme_Rocket-project-image" >
+                                <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 md:h-48 lg:h-56">
+                                <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">acme rockets</h3>
+                                <p class="text-balance mb-2 font-semibold">The Acme Rockets landing page is a satirical portfolio website that showcases fictional rockets and features humorous testimonials from cartoon characters, paying tribute to its origins</p>
+                                <a href="tailwind-firstproject.vercel.app" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
                             </div>
                         </div>
+                        <!-- project seven -->
+                        <div class="rounded-xl relative overflow-hidden w-full h-72 sm:h-96 md:h-72 lg:h-96 group project-card" data-category="react">
+                            <img class="h-full w-full object-fill rounded-xl " src="./img/todo.png" alt="Acme_Rocket-project-image" >
+                            <div class="absolute inset-x-0 bottom-0 bg-slate-400 bg-opacity-65 text-slate-800 p-4 transform translate-y-0 md:translate-y-full md:transition-transform md:duration-300 md:ease-in-out md:group-hover:translate-y-0 md:h-48 lg:h-56">
+                                <h3 class="uppercase text-zinc-900 font-extrabold mb-3 text-base sm:text-xl">todo list</h3>
+                                <p class="text-balance mb-2 font-semibold">A to-do list app is a digital tool for organizing tasks. It allows users to create, manage, and track tasks by setting deadlines and reminders. It helps improve productivity by keeping everything organized in one place.</p>
+                                <a href="https://react-todo-app-omega-virid.vercel.app/" target="_blank" class="inline-block rounded-lg border-2 bg-zinc-100 px-4 py-1 text-slate-500 transition-colors duration-300 hover:bg-slate-500 hover:text-zinc-100">View Live →</a>
+                            </div>
+                        </div>
+                        <!-- project ends here -->
                     </div>
-                </div>
-                 <form action="https://formsubmit.co/7e4db146d75b1d561ff8e0a4f6cee5cd" method="POST" class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 ">
-                    <!-- honeypot -->
-                     <input type="text" name="_honey" class="hidden">
-                     <!-- disable captcha -->
-                     <input type="hidden" name="_captcha" value="false">
-                     <input type="hidden" name="_next" value="https://new-project-delta-lac.vercel.app/success.html">
-                    <input type="text" name="name" id="name" placeholder="your name" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
-                    <input type="email" id="email" name="email" placeholder="chidex222@gmail.com" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
-                    <input type="tel" name="phone-number" id="phone" placeholder="+234-7087654355" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
-                    <textarea name="message&nbsp;for&nbsp;you" cols="30" id="message" rows="10" placeholder="Message" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100"></textarea>
-                    <button type="submit" class="w-full uppercase text-xl flex justify-center items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">send a Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer >
-        <div class="mx-auto max-w-6xl p-5">
-        <!-- Footer content grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Company Info / Logo Section -->
-                <div class="mb-6 md:mb-0">
-                    <h1 class="text-2xl font-extrabold transition-colors duration-300 hover:text-slate-500">
-                        <a href="#">NNAMANI <span class="text-slate-500 transition-colors duration-300 hover:text-zinc-100">EMMANUEL</span></a>
-                    </h1>
-                    <p class="mt-4 text-sm max-w-xs mb-4">
-                        I am a versatile front-end developer specializing in creating responsive, user-centric web applications. I leverage modern tools like React, Tailwind CSS, and Bootstrap to build clean, intuitive, and highly functional interfaces.
-                    </p>
-                    <div class="flex items-center gap-4 mt-3">
-                        <a href="mailto:chiderannamani442@gmail.com" class="rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">hire me</a>
-                        <a href="https://drive.google.com/file/d/1t9W4KzCBn9ZRoK-DLNSBuTR6hHqfXs6U/view?usp=drivesdk" download target="_blank"  class="inline-flex items-center justify-center rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">
-                            Download CV
-                        </a>
-    
-                    </div>
-                </div>
-            <!-- Navigation Links and CV Download -->
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-white text-lg font-semibold mb-4 rounded-lg">Quick Links</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">about</a></li>
-                        <li><a href="#services" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">service</a></li>
-                        <li><a href="#projects" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">project</a></li>
-                        <li><a href="#contact" class="transition-colors duration-300 hover:text-slate-500 hover:opacity-90">contact us</a></li>
-                    </ul>
-                </div>
-            <!-- Social Media & Contact Section -->
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-white text-lg font-semibold mb-4 rounded-lg">Contact us on :</h3>
-                <!-- Social Media Icons-->
-                    <div class="mt-4 flex space-x-4">
-                        <a href="https://github.com/C6250hidex" target="_blank" aria-label="GitHub" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.74.08-.725.08-.725 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.125-.3-.54-1.52.12-3.18 0 0 1-.322 3.3.08.95-.262 1.95-.392 2.947-.392 1 0 1.997.13 2.947.392 2.29-2.43 3.29-1.93 3.29-1.93.66 1.66.24 2.88.12 3.18.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.895-.015 3.28 0 .32.21.69.82.57C20.565 22.092 24 17.59 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                        <a href="https://x.com/ChideraNna37519" target="_blank" aria-label="Twitter" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6L18 18"/></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366" target="_blank" aria-label="linkedin" class="text-zinc-100 hover:text-slate-500 transition-colors duration-300">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.48c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.58h-3.554V9.29h3.418v1.561h.048c.478-.896 1.637-1.853 3.37-1.853 3.618 0 4.287 2.378 4.287 5.48v6.088zM4.306 6.581c-1.144 0-2.068-.926-2.068-2.072 0-1.146.924-2.071 2.068-2.071s2.068.925 2.068 2.071c-.001 1.146-.925 2.072-2.068 2.072zM5.358 20.452H1.804V9.29h3.554v11.162zM22.225 0H1.771C.794 0 0 .774 0 1.728v20.544C0 23.226.794 24 1.771 24h20.454c.976 0 1.771-.774 1.771-1.728V1.728C24 .774 23.205 0 22.225 0z"/></svg>
+                    <div class="p-6 rounded-3xl shadow-2xl border border-zinc-500 transform hover:scale-10 transition-transform duration-300l text-center my-5">
+                        <h3 class="text-3xl font-extrabold text-zinc-100">Want to See More?</h3>
+                        <p class="text-xl font-medium text-slate-500 my-5">Check out my complete portfolio on GitHub for more exciting projects and contributions</p>
+                        <a class="inline-flex items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100" href="https://www.linkedin.com/in/nnamani-chidera-emmanuel-534672366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="linkedin">
+                            <svg role="img" viewBox="0 0 24 24" fill="currentColor" width="40px">
+                                <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.71.08-.71 1.17.08 1.8 1.2 1.8 1.2 1.04 1.8 2.72 1.28 3.38.98.1-.78.4-1.28.72-1.58-2.55-.29-5.24-1.27-5.24-5.65 0-1.24.44-2.26 1.16-3.06-.12-.29-.5-1.47.1-3.06 0 0 .95-.3 3.12 1.16a10.8 10.8 0 012.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.12-1.16 3.12-1.16.6 1.59.22 2.77.1 3.06.72.8 1.16 1.82 1.16 3.06 0 4.39-2.7 5.35-5.27 5.63.42.36.8 1.1.8 2.22v3.29c0 .31.21.66.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
+                            </svg>View All Projects
                         </a>
                     </div>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
-                <p>Developed & Maintained By Chidex Collections(Chidi Aptech) <br class="md:hidden"> &copy; 2025 Chidex. All rights reserved.</p>
-            </div>
+                </section>
+                        <!-- contact section -->
+                <section id="contact" class="section py-16 widescreen:section-min-height tallscreen:section-min-height scroll-mt-20">
+                    <h2 class="text-4xl font-bold text-slate-500 mb-10 text-center uppercase">Contact Us</h2>
+                    <p class="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto text-center">We're here to answer your questions, provide support, or discuss potential collaborations. Fill out the form or reach out directly via email or phone.  Let's start a conversation and see how we can work together to achieve your goals.</p>
+                    <div class="bg-zinc-900 text-zinc-100 rounded-3xl grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-8 items-center mt-6">
+                        <div>
+                            <div >
+                                <div class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 mb-4 ">
+                                    <h3 class="text-2xl text-slate-300 mb-4 font-bold">Contact Information</h3>
+                                    <div>
+                                        <div class="flex gap-1 md:gap-3 flex-shrink flex-wrap items-center mb-3">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-zinc-500">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                            </svg>
+                                            <span class="text-base md:text-xl">chiderannamani442@gmail.com</span>
+                                        </div>
+                                        <div class="flex gap-3 items-center mb-3">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-zinc-500 ">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                            </svg>
+                                            <span class="text-base md:text-xl">+234 708 959 6250</span>
+                                        </div>
+                                        <div class="flex gap-3 items-center">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-zinc-500 ">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            </svg>
+                                            <span class="text-base md:text-xl">Enugu, Nigeria</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                      <!-- Quick Actions -->
+                                <div class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 ">
+                                    <h3 class="text-2xl text-slate-300 mb-4 font-bold">Quick Actions</h3>
+                                    <div>
+                                        <a href="#" class="flex justify-center gap-3 w-full items-center py-2 rounded-lg border-2 border-zinc-10 transition-colors duration-300 hover:border-slate-500 text-zinc-100 mb-4 text-base md:text-xl">
+                                            <svg class="h-12 w-12 text-green-300" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                            </svg>
+                                                WhatsApp
+                                        </a>
+                                        <a href="tel:+2341234567890" class="flex justify-center gap-3 w-full items-center py-2 rounded-lg border-2 border-zinc-100 transition-colors duration-300 hover:border-slate-500 text-zinc-100 md:text-xl text-base">
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-12 w-12 text-green-300 ">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                            </svg>
+                                                Call Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="https://formsubmit.co/7e4db146d75b1d561ff8e0a4f6cee5cd" method="POST" class="w-full p-6 rounded-3xl shadow-2xl border border-zinc-500 ">
+                            <!-- honeypot -->
+                            <input type="text" name="_honey" class="hidden">
+                            <!-- disable captcha -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://new-project-delta-lac.vercel.app/success.html">
+                            <input type="text" name="name" id="name" placeholder="your name" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
+                            <input type="email" id="email" name="email" placeholder="chidex222@gmail.com" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
+                            <input type="tel" name="phone-number" id="phone" placeholder="+234-7087654355" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100">
+                            <textarea name="message&nbsp;for&nbsp;you" cols="30" id="message" rows="10" placeholder="Message" required class="bg-zinc-900 focus:bg-slate-700 w-full p-2 outline-none mb-4 rounded-lg border-2 border-zinc-100 focus:border-slate-500 focus:text-zinc-100"></textarea>
+                            <button type="submit" class="w-full uppercase text-xl flex justify-center items-center gap-1 rounded-lg border-2 border-zinc-100 px-4 py-2 text-slate-500 transition-colors duration-300 hover:border-slate-500 hover:text-zinc-100">send a Message</button>
+                        </form>
+                    </div>
+                </section>
+                <footer>
+                    <div class="p-8 border-t border-gray-700 text-sm mx-auto max-w-6xl">
+                        <p class="text-center">Developed & Maintained By Chidex Collections(Chidi Aptech) <br class="md:hidden"> &copy; 2025 Chidex. All rights reserved.</p>
+                    </div>
+                </footer>
+            </main>
         </div>
-    </footer>
-  </div>
-    <script src="./js/script.js"></script>
+      
+    </div>
 </body>
 </html>
